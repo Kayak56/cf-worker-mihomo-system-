@@ -237,40 +237,37 @@ export function configs(mihomo = '', singbox = '') {
             },
         ],
         singbox: [
-            {
-                label: '通用',
-                options: [
-                    {
+           {
                         label: '默认(精简版) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default.yaml',
                     },
                     {
                         label: '默认(精简版) (无去广告) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default_NoAds.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default_NoAds.yaml',
                     },
                     {
                         label: '默认(mini版) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default_mini.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default_mini.yaml',
                     },
                     {
                         label: '默认(mini版) (无去广告) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default_mini_NoAds.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default_mini_NoAds.yaml',
                     },
                     {
                         label: '默认(全分组) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default_full.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default_full.yaml',
                     },
                     {
                         label: '默认(全分组) (无去广告) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_default_full_NoAds.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default_full_NoAds.yaml',
                     },
                     {
                         label: 'DustinWin 全分组版 (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_DustinWin_full.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_DustinWin_full.yaml',
                     },
                     {
                         label: 'DustinWin 全分组版 (无去广告) (与Github同步) ',
-                        value: 'https://raw.githubusercontent.com/Kwisma/cf-worker-mihomo/main/template/singbox_DustinWin_full_NoAds.yaml',
+                        value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_DustinWin_full_NoAds.yaml',
                     },
                 ],
             },
