@@ -238,6 +238,41 @@ export function applyTemplate(top, rule, e) {
     } else {
         if (e.exclude_package) addExcludePackage(top, e.Exclude_Package);
         if (e.exclude_address) addExcludeAddress(top, e.Exclude_Address);
+    }// 强制添加/覆盖一个 tun inbound 为 system（绕过 e.tun 删除逻辑，安卓优化）
+    if (!top.inbounds) top.inbounds = [];
+
+    const systemTun = {
+        type: "tun",
+        tag: "tun-in",
+        interface_name: "singbox",
+        address: [
+            "172.18.0.1/30",
+            "fdfe:dcba:9876::1/126"
+        ],
+        mtu: 1492,                    // 安卓推荐值，9000容易分片/发热/兼容问题
+        auto_route: true,
+        strict_route: true,
+        auto_redirect: true,          // 加这个，解决安卓很多连接/残留问题
+        endpoint_independent_nat: false,
+        stack: "system",              // 强制 system
+        udp_timeout: "2m",
+        platform: {
+            http_proxy: {
+                enabled: true,
+                server: "127.0.0.1",
+                server_port: 20120
+            }
+        }
+    };
+
+    // 先检查是否已有 tun（如果有，覆盖关键字段）
+    const existingTunIndex = top.inbounds.findIndex(inb => inb.type === 'tun');
+    if (existingTunIndex !== -1) {
+        // 覆盖现有 tun 的关键设置（保留其他可能存在的自定义）
+        Object.assign(top.inbounds[existingTunIndex], systemTun);
+    } else {
+        // 没有就添加一个
+        top.inbounds.push(systemTun);
     }
     // 添加 tailscale 相关配置
     if (e.tailscale) {
