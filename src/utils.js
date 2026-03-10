@@ -236,7 +236,10 @@ export function configs(mihomo = '', singbox = '') {
                 ],
             },
         ],
-        singbox: [
+        singbox: [            
+         {
+                label: '通用',
+                options: [
            {
                         label: '默认(精简版) (与Github同步) ',
                         value: 'https://raw.githubusercontent.com/Kayak56/cf-worker-mihomo-system-/main/template/singbox_default.yaml',
